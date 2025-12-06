@@ -108,8 +108,8 @@ class SearchPatient extends SearchResource {
     FhirDateTime value, {
     SearchModifier? modifier,
   }) {
-    parameters['${modifier != null ? '$modifier' : ''}birthdate'] =
-        value.toString();
+    parameters['birthdate'] =
+        ${modifier != null ? '$modifier:' : ''} + value.toString();
     return this;
   }
 
